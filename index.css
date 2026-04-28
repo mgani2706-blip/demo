@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fafaf8;
+  color: #1a1a1a;
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #f97316; border-radius: 3px; }
+
+/* Smooth transitions */
+a, button { transition: all 0.2s ease; }
+
+/* Veg/NonVeg indicator */
+.veg-indicator { width: 14px; height: 14px; border: 1.5px solid #16a34a; display: inline-flex; align-items: center; justify-content: center; border-radius: 2px; }
+.veg-indicator::after { content: ''; width: 6px; height: 6px; background: #16a34a; border-radius: 50%; }
+.nonveg-indicator { width: 14px; height: 14px; border: 1.5px solid #dc2626; display: inline-flex; align-items: center; justify-content: center; border-radius: 2px; }
+.nonveg-indicator::after { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 7px solid #dc2626; }
+
+/* Card hover effect */
+.card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+/* Skeleton loading */
+.skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: skeleton-loading 1.5s infinite; }
+@keyframes skeleton-loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
